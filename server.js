@@ -1,22 +1,20 @@
 import express from 'express';
 import http from 'http';
 import path from 'path';
-import io from 'socket.io';
-
-
-
-imort 
+import * as io from 'socket.io';
 
 const __dirname = path.dirname(new URL(import.meta.url).pathname);
 
 const app = express();
 const HTTP = http.createServer(app);
+const socketio = new io.Server(HTTP);
+
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html')
 });
 
-io.on('connection', (socket) => {
+socketio.on('connection', (socket) => {
   console.log('a user connected');
 });
 
