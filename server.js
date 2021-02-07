@@ -6,7 +6,7 @@ import * as io from 'socket.io';
 const __dirname = path.dirname(new URL(import.meta.url).pathname);
 
 const app = express();
-const HTTP = http.createServer(app);
+const server = http.createServer(app);
 const socketio = new io.Server(HTTP);
 
 
