@@ -7,7 +7,7 @@ const __dirname = path.dirname(new URL(import.meta.url).pathname);
 
 const app = express();
 const server = http.createServer(app);
-const socketio = new io.Server(HTTP);
+const socketio = new io.Server(server);
 
 
 app.get('/', (req, res) => {
